@@ -1,0 +1,303 @@
+:root {
+  --lightPink: #FFE6E6;
+  --darkPink: #F2D1D1;
+  --lightBlue: #DAEAF1;
+  --darkBlue: #C6DCE4;
+}
+
+body {
+  font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  background: var(--darkPink);
+  position: center;;
+}
+
+.main-ul {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 25px;
+}
+
+.main-nav ul li {
+  list-style: none;
+}
+
+.main-nav a {
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.upper-nav {
+  background: var(--lightPink);
+  padding: .2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.upper-nav ul li {
+  list-style: none;
+}
+
+.con-description {
+  padding-top: 100px;
+}
+
+.description {
+  padding: 10px 20px;
+}
+
+.login-container {
+  width: 50%;
+  flex-wrap: wrap;
+  display: inline-block;
+  padding: 3rem;
+  height: 50%;
+  border-radius: 20px;
+  background-color: var(--lightPink);
+  position: relative;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: block;
+  background: url("../resources/IMG-5012.jpg") no-repeat left center;
+  background-size: cover;
+}
+
+.banner-autumn {
+  background: url("../resources/banner_autumn.jpeg") no-repeat left center;
+  background-size: cover;
+}
+
+.banner span {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  font-family: "Lucida Handwriting, Lucida Console", serif;
+  transform: translate(-50%, -50%);
+}
+
+.block-blue {
+  background-color: var(--lightBlue);
+  display: flex;
+  justify-content: center;
+}
+
+.block-blue p {
+  padding: .4rem 0;
+  margin: 0;
+}
+
+.logo-img {
+  width: 270px;
+  height: 100px;
+}
+
+.index-info {
+  padding: 1.5rem 3rem;
+}
+
+.index-info h1 {
+  font-size: 3rem;
+}
+
+.index-info p {
+  font-size: 1.5rem;
+}
+
+footer {
+  background-color: var(--lightBlue);
+  padding-top: 1rem;
+}
+
+footer h4 {
+  margin-bottom: 1rem;
+}
+
+.follow-icons {
+  font-size: 1.5rem;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.login-title {
+  text-transform: uppercase;
+}
+
+.psw {
+  color: #888888;
+}
+
+.register-now:hover {
+  text-decoration: underline;
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.heading-name {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration-style: dashed;
+}
+
+.img-about-us {
+  width: 50%;
+  height: 100%;
+  box-shadow: 10px 10px 10px 10px #c9c8c8;
+  border-radius: 3%;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .carousel-multi-item-2 .col-md-3 {
+    float: left;
+    width: 25%;
+    max-width: 100%;
+  }
+}
+
+.carousel-multi-item-2 .card img {
+  border-radius: 2px;
+}
+
+.carousel-img {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+}
+
+.carousel-caption h5 {
+  font-size: 3rem;
+}
+
+@media (min-width: 800px) {
+  .carousel-caption h5 {
+    font-size: 5rem;
+  }
+}
+
+.product-icons i {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+}
+
+.product-detail {
+  padding: 1rem;
+}
+
+.product-detail p {
+  font-size: 1.2rem;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.product-detail button {
+  padding: .37rem .5rem;
+  background-color: var(--lightPink);
+}
+
+.product>p {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.product {
+  margin-top: 1rem;
+}
+
+.add-product-form label {
+  font-size: large;
+  font-weight: bold;
+}
+
+.add-product-form {
+  margin: 2rem;
+}
+
+.in-sale-check {
+  padding-bottom: 2rem;
+}
+
+.add-product-button {
+  align-items: center;
+  color: dimgray;
+  position: center;;
+}
+
+
+
+
+
