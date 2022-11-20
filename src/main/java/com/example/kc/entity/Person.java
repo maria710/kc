@@ -1,0 +1,31 @@
+package com.example.kc.entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "person")
+@Data
+public class Person {
+
+    @Id
+    @SequenceGenerator(name = "seq_person", sequenceName = "seq_person", schema = "kcflowers", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_person")
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "address_id")
+    private Long addressId;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+}

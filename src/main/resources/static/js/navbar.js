@@ -1,4 +1,4 @@
-// https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages
+
 fetch('../html/navbar.html')
   .then(res => res.text())
   .then(text => {

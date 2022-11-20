@@ -87,12 +87,12 @@ a {
   width: 100%;
   height: 50vh;
   display: block;
-  background: url("../resources/IMG-5012.jpg") no-repeat left center;
+  background: url("../img/IMG-5012.jpg") no-repeat left center;
   background-size: cover;
 }
 
 .banner-autumn {
-  background: url("../resources/banner_autumn.jpeg") no-repeat left center;
+  background: url("../img/banner_autumn.jpeg") no-repeat left center;
   background-size: cover;
 }
 
