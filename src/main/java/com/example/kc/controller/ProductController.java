@@ -4,10 +4,12 @@ import com.example.kc.dto.ProductDTO;
 import com.example.kc.entity.Product;
 import com.example.kc.mapper.ProductMapper;
 import com.example.kc.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,20 +22,9 @@ public class ProductController {
     private final ProductMapper productMapper;
     private final ProductService productService;
 
-    //    @GetMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
-//    public ProductDTO getProduct(@PathVariable("id") Long id) {
-//        return productMapper.toProductDTO(productService.getProduct(id));
-//    }
-//    @GetMapping(value = "product")
-//    public String getProduct(@ModelAttribute("id") Long id, Model model) {
-//        var productDTO =  productMapper.toProductDTO(productService.getProduct(id));
-//        model.addAttribute("product", productDTO);
-//        return "product";
-//    }
-
     @GetMapping(value = "/products")
     public String getProduct(Model model) {
-        List<Product> productList =  productService.getProducts();
+        List<Product> productList = productService.getProducts();
         model.addAttribute("products", productList);
         return "productList";
     }
@@ -45,7 +36,12 @@ public class ProductController {
     }
 
     @PostMapping(value = "/productForm")
-    public String addProduct(@ModelAttribute("formData") ProductDTO productDTO, Model model) {
+    public String addProduct(@ModelAttribute("formData") @Valid ProductDTO productDTO, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasFieldErrors()) {
+            return "productForm";
+        }
+
         productMapper.toProductDTO(productService.addProduct(productDTO));
         model.addAttribute("name", productDTO.getName());
         model.addAttribute("description", productDTO.getDescription());
@@ -58,13 +54,13 @@ public class ProductController {
         var productDTO = productMapper.toProductDTO(productService.findById(id));
         productDTO.setId(id);
         model.addAttribute("product", productDTO);
-        //model.addAttribute("id", id);
+        model.addAttribute("id", id);
         return "editForm";
     }
 
-    @PostMapping(value = "/editForm")
-    public String updateProduct(@ModelAttribute("product") ProductDTO productDTO, Model model) {
-        productMapper.toProductDTO(productService.updateProduct(productDTO.getId(), productDTO));
+    @PostMapping(value = "/editForm/{id}")
+    public String updateProduct(@ModelAttribute("product") ProductDTO productDTO, @PathVariable("id") Long id,Model model) {
+        productMapper.toProductDTO(productService.updateProduct(id, productDTO));
         model.addAttribute("name", productDTO.getName());
         model.addAttribute("description", productDTO.getDescription());
         model.addAttribute("price", productDTO.getPrice());
@@ -72,17 +68,28 @@ public class ProductController {
     }
 
     @GetMapping(value = "/deleteProduct")
-    public String deleteProduct(@ModelAttribute("id")  Long id) {
+    public String deleteProduct(@ModelAttribute("id") Long id) {
         productMapper.toProductDTO(productService.deleteProduct(id));
         return "redirect:/products";
     }
+
+
+    //    @GetMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
+//    public ProductDTO getProduct(@PathVariable("id") Long id) {
+//        return productMapper.toProductDTO(productService.getProduct(id));
+//    }
+//    @GetMapping(value = "product")
+//    public String getProduct(@ModelAttribute("id") Long id, Model model) {
+//        var productDTO =  productMapper.toProductDTO(productService.getProduct(id));
+//        model.addAttribute("product", productDTO);
+//        return "product";
+//    }
 
 
 //    @PostMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
 //    public ProductDTO postProduct(@RequestBody ProductDTO productDTO) {
 //        return productMapper.toProductDTO(productService.addProduct(productDTO));
 //    }
-
 
 
 //    @PutMapping(value = "/product/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
