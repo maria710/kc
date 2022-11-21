@@ -32,12 +32,12 @@
             <td><span th:text="${product.getPrice()}"> Author </span></td>
             <td>
                 <a th:href="|@{/updateProduct(id = ${product.getId()})}|" class="btn btn-warning">
-                    <i class="bi bi-pen-fill"></i>
+                    UPDATE
                 </a>
             </td>
             <td>
                 <a th:href="|@{/deleteProduct(id = ${product.getId()})}|" class="btn btn-danger">
-                    <i class="bi bi-x-lg"></i>
+                    DELETE
                 </a>
             </td>
         </tr>
