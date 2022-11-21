@@ -23,16 +23,13 @@
 
     <label for="name">Product name</label>
     <input required minlength="2" maxlength="20" type="text" id="name" name="name" placeholder="Enter product name.." th:field="*{name}">
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 
     <label for="price">Price</label>
-    <br> <input required type="number" step=".01" id="price" name="price" placeholder="Enter product price.." th:field="*{price}">
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+    <br> <input required min=0 type="number" step=".01" id="price" name="price" placeholder="Enter product price.." th:field="*{price}">
 
     <p>
       <label for="subject">Description</label>
-      <textarea required minlength="50" id="subject" name="subject" placeholder="Write description.." style="height:200px" th:field="*{description}"></textarea>
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+      <textarea required minlength="30" id="subject" name="subject" placeholder="Write description.." style="height:200px" th:field="*{description}"></textarea>
     </p>
 
     <div class="mb-3">
