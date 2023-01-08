@@ -16,7 +16,7 @@ public class CartService {
     private final CartRepository cartRepository;
 
     public List<CartItem> cartItemListByUserId(Long id) {
-        return cartRepository.findCartItemsByUserId(id);
+        return cartRepository.findCartItemsByUser2Id(id);
     }
 
 }

@@ -9,8 +9,7 @@ import lombok.Data;
 public class Address {
 
     @Id
-    @SequenceGenerator(name = "seq_address", sequenceName = "seq_address", schema = "kcflowers", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_address")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

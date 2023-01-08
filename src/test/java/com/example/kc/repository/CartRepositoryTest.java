@@ -1,11 +1,9 @@
 package com.example.kc.repository;
 
 import com.example.kc.entity.CartItem;
-import com.example.kc.entity.User;
-import org.junit.jupiter.api.Assertions;
+import com.example.kc.entity.User2;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -20,16 +18,16 @@ class CartRepositoryTest {
     @Test
     public void addItemToCart() {
 
-        var user = new User();
+        var user = new User2();
 
     }
 
     @Test
     public void findCartItemByUserId() {
-        var user = new User();
+        var user = new User2();
         user.setId(4L);
 
-        List<CartItem> cartItemList = cartRepository.findCartItemsByUserId(user.getId());
+        List<CartItem> cartItemList = cartRepository.findCartItemsByUser2Id(user.getId());
         assertEquals(0, cartItemList.size());
     }
 }
