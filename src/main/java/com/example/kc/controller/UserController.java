@@ -26,17 +26,16 @@ public class UserController {
     }
 
     @PostMapping(value = "/registerUser")
-    public String registerUser(@ModelAttribute("user") @Valid UserDTO userDTO, BindingResult bindingResult,  Model model) {
+    public String registerUser(@ModelAttribute("userDTO") @Valid UserDTO userDTO, BindingResult bindingResult,  Model model) {
 
         if (bindingResult.hasFieldErrors()) {
-            return "register";
+            model.addAttribute("userDTO", userDTO);
+            return "redirect:/register?fail";
         }
 
-        model.addAttribute("firstName", userDTO.getFirstName());
-        model.addAttribute("lastName", userDTO.getLastName());
-        model.addAttribute("password", userDTO.getPassword());
-        model.addAttribute("email", userDTO.getEmail());
-
+        if (userService.userExists(userDTO)) {
+            bindingResult.rejectValue("email", "Account with this email is already registered!");
+        }
         userService.addUser(userDTO);
         return "completedRegistration";
     }
