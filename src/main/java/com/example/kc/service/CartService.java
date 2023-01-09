@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -16,7 +17,10 @@ public class CartService {
     private final CartRepository cartRepository;
 
     public List<CartItem> cartItemListByUserId(Long id) {
-        return cartRepository.findCartItemsByUser2Id(id);
+        if (id != null) {
+            return cartRepository.findCartItemsByUser2Id(id);
+        }
+        return Collections.emptyList();
     }
 
 }

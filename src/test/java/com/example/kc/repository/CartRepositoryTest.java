@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import java.util.List;
-
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import static org.junit.jupiter.api.Assertions.*;
 
 

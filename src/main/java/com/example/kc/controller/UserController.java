@@ -36,8 +36,11 @@ public class UserController {
         if (userService.userExists(userDTO)) {
             bindingResult.rejectValue("email", "Account with this email is already registered!");
         }
-        userService.addUser(userDTO);
-        return "completedRegistration";
+        var user2 = userService.addUser(userDTO);
+        if (user2 != null) {
+            return "completedRegistration";
+        }
+        return "redirect:/register?fail";
     }
 
     @GetMapping(value = "/listAllUsers")
