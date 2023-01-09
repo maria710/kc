@@ -3,6 +3,8 @@ package com.example.kc.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "category")
 @Data

@@ -1,5 +1,6 @@
 package com.example.kc.dto;
 
+import com.example.kc.entity.Category;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
@@ -12,4 +13,5 @@ public class ProductDTO {
     private Double price;
     private String description;
     private Boolean sale;
+    private Category category;
 }

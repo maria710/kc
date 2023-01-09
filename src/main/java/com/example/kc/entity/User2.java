@@ -3,7 +3,6 @@ package com.example.kc.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.management.relation.Role;
 import java.util.List;
 
 @Entity
@@ -38,6 +37,6 @@ public class User2 {
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}
             )
-    private List<UserRole>roles;
+    private List<UserRole> roles;
 
 }

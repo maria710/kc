@@ -15,4 +15,14 @@ public class AppController {
     public String getHomePage() {
         return "index";
     }
+
+    @GetMapping(value = "/aboutUs")
+    public String getAboutUsPage() {
+        return "about-us";
+    }
+
+    @GetMapping(value = "/gallery")
+    public String getGallery() {
+        return "gallery";
+    }
 }

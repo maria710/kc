@@ -18,11 +18,22 @@
 
 <body>
 <div class="login-container shadow-lg">
-  <h2>Register</h2>
+
   <div th:if="${param.fail}" class="alert alert-success">
     Invalid username and password
   </div>
   <div id="errors"></div> <br>
+  <div class="container login-title">
+
+    <div class="row">
+      <div class="col-md-11">
+        <h2>Login</h2>
+      </div>
+      <div class="col-md-1">
+        <a th:href="@{/}" type="button" class="btn-close" aria-label="Close"></a>
+      </div>
+    </div>
+  </div>
   <form onsubmit="check()" th:action="@{/registerUser}" method="post" th:object="${userDTO}">
     <div class="row">
       <div class="form-group col-lg-6">

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Successful registration</title>
@@ -14,7 +16,7 @@
 </head>
 
 <body>
-<script id="replace_with_navbar" th:src="@{/js/navbar.js}"></script>
+<div th:replace="fragments/navbar :: navbar"></div>
 <div id="errors"></div> <br>
 <div class="container index-info text-center">
     <h1>

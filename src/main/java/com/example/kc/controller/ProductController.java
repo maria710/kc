@@ -1,8 +1,10 @@
 package com.example.kc.controller;
 
+import com.example.kc.dto.CategoryDTO;
 import com.example.kc.dto.ProductDTO;
 import com.example.kc.entity.Product;
 import com.example.kc.mapper.ProductMapper;
+import com.example.kc.service.CategoryService;
 import com.example.kc.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,10 +22,32 @@ public class ProductController {
 
     private final ProductMapper productMapper;
     private final ProductService productService;
+    private final CategoryService categoryService;
 
     @GetMapping(value = "/products")
     public String getProduct(Model model) {
         List<Product> productList = productService.getProducts();
+        model.addAttribute("products", productList);
+        return "productList";
+    }
+
+    @GetMapping(value = "/products/{category}")
+    public String getProductByCategory(Model model, @PathVariable("category") String category) {
+
+        var categoryDTO = categoryService.findCategoryByName(category);
+        List<Product> productList;
+        if (categoryDTO == null) {
+            productList = productService.getProducts();
+        } else {
+            productList = productService.getProductsByCategory(categoryDTO);
+        }
+        model.addAttribute("products", productList);
+        return "productList";
+    }
+
+    @GetMapping(value = "products/sale")
+    public String getProductsInSale(Model model) {
+        List<Product> productList = productService.getProductsInSale();
         model.addAttribute("products", productList);
         return "productList";
     }

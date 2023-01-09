@@ -1,5 +1,6 @@
 package com.example.kc.service;
 
+import com.example.kc.dto.CategoryDTO;
 import com.example.kc.dto.ProductDTO;
 import com.example.kc.entity.Product;
 import com.example.kc.mapper.ProductMapper;
@@ -14,11 +15,9 @@ import java.util.List;
 @Service
 @Data
 @RequiredArgsConstructor
-@AllArgsConstructor
 public class ProductService {
-
-    private ProductMapper productMapper;
-    private ProductRepository productRepository;
+    private final ProductMapper productMapper;
+    private final ProductRepository productRepository;
 
     public Product addProduct(ProductDTO productDTO) {
         var product = productMapper.toProduct(productDTO);
@@ -57,5 +56,12 @@ public class ProductService {
 
     public Product getProduct(Long id) {
         return productRepository.findById(id).orElse(null);
+    }
+
+    public List<Product> getProductsByCategory(CategoryDTO category) {
+        return productRepository.findProductsByCategoryNameAndActiveTrue(category.getName());
+    }
+    public List<Product> getProductsInSale() {
+        return productRepository.findProductsBySaleTrueAndActiveTrue();
     }
 }

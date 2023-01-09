@@ -16,9 +16,7 @@
 </head>
 
 <body>
-
-<script id="replace_with_navbar" th:src="@{/js/navbar.js}"></script>
-
+<div th:replace="fragments/navbar :: navbar"></div>
 <div class="banner">
     <div class="container">
         <div class="row">
@@ -41,7 +39,6 @@
             <div class="col-md">
                 <h1>
                     Welcome to KC Flowers.
-                    <a th:href="@{/register}">Register</a>
                 </h1>
             </div>
         </div>

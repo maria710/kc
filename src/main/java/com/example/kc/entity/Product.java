@@ -3,6 +3,8 @@ package com.example.kc.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "product")
 @Data
@@ -28,4 +30,8 @@ public class Product {
 
     @Column(name = "in_sale")
     private Boolean sale;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
