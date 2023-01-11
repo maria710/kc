@@ -2,11 +2,19 @@
     <header>
         <nav class="container-fluid upper-nav">
             <div>
-                <a th:href="@{../contact.html}">Contact Us</a>
+                <a th:href="@{/contact.html}">Contact Us</a>
             </div>
             <div>
                 <i class="fa-solid fa-user"></i>
                 <a th:href="@{/login}" class="btn btn-link">Log In</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-user"></i>
+                <a th:href="@{/register}" class="btn btn-link">Register</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-user"></i>
+                <a th:href="@{/logout}" class="btn btn-link">Log out</a>
             </div>
         </nav>
 

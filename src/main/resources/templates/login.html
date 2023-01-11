@@ -18,8 +18,8 @@
 
 <div class="login-container shadow-lg">
 
-  <div th:if="${param.error}" class="alert alert-success">
-    Invalid username and password
+  <div th:if="${param.error}" class="alert alert-error">
+    Invalid username and password.
   </div>
 
   <div th:if="${param.logout}" class="alert alert-success">
@@ -39,12 +39,12 @@
 
   <form method="post" role="form" th:action="@{/login}">
     <div class="mb-3">
-      <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
     <button type="submit" value="Log in" class="btn btn-primary login-button">Log In</button>
 

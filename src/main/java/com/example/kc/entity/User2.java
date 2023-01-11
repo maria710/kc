@@ -31,6 +31,9 @@ public class User2 {
     @Column(name = "active")
     private Boolean active;
 
+    @Column(name = "username")
+    private String username;
+
     @ManyToMany
     @JoinTable(
             name = "roles",

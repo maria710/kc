@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,6 +29,9 @@ class UserServiceTest {
     @Mock
     private UserMapper userMapper;
 
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
     private User2 user2;
     private User2 savedUser2;
     private UserDTO userDTO;
@@ -35,9 +39,10 @@ class UserServiceTest {
     @BeforeEach
     public void setUp() {
         userMapper = new UserMapper();
+        passwordEncoder = Mockito.mock(PasswordEncoder.class);
         userRepository = Mockito.mock(UserRepository.class);
         roleRepository = Mockito.mock(RoleRepository.class);
-        userService = new UserService(userRepository, roleRepository, userMapper);
+        userService = new UserService(userRepository, roleRepository, userMapper, passwordEncoder);
         user2 = new User2();
         user2.setId(1L);
         user2.setFirstName("Maria");

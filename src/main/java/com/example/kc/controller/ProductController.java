@@ -1,6 +1,5 @@
 package com.example.kc.controller;
 
-import com.example.kc.dto.CategoryDTO;
 import com.example.kc.dto.ProductDTO;
 import com.example.kc.entity.Product;
 import com.example.kc.mapper.ProductMapper;
