@@ -1,6 +1,6 @@
 package com.example.kc.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -34,7 +34,7 @@ public class User2 {
     @Column(name = "username")
     private String username;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "roles",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},

@@ -3,8 +3,14 @@ package com.example.kc.controller;
 import com.example.kc.dto.UserDTO;
 import com.example.kc.entity.User2;
 import com.example.kc.service.UserService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -53,14 +59,15 @@ public class UserController {
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-//        User2 user = userService.findByUsernameAndPassword(username, password);
-//        if (user != null) {
-//            return "redirect:/";
-//        } else {
-//            // login failed, display error message
+//        try {
+//            Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
+//            Authentication authenticated = authenticationManager.authenticate(auth);
+//            SecurityContextHolder.getContext().setAuthentication(authenticated);
+//            return "redirect:/home";
+//        } catch (AuthenticationException e) {
 //            model.addAttribute("error", "Invalid username or password");
 //            return "login";
 //        }
-        return "login";
+        return "redirect:/";
     }
 }

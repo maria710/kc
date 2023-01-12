@@ -1,18 +1,12 @@
 package com.example.kc.configuration;
 
 
-import com.example.kc.security.UserAuthenticationManager;
-import com.example.kc.service.RegisteredUserDetailService;
 import com.example.kc.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -22,20 +16,16 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig {
 
     //    private final RegisteredUserDetailService registeredUserDetailService;
-    @Autowired
-    private UserAuthenticationManager userAuthenticationManager;
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private UserAuthenticationManager userAuthenticationManager;
+//    @Autowired
+//    private UserService userService;
 
 //    @Autowired
 //    public WebSecurityConfig(RegisteredUserDetailService registeredUserDetailService) {
 //        this.registeredUserDetailService = registeredUserDetailService;
 //    }
 
-    @Bean
-    public AuthenticationManager authenticationManager() {
-        return new UserAuthenticationManager(userService, passwordEncoder());
-    }
 
 //    @Bean
 //    public UserDetailsService userDetailsService() {
@@ -73,7 +63,7 @@ public class WebSecurityConfig {
                         .permitAll())
                 .logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .permitAll());
-        http.authenticationManager(userAuthenticationManager);
+//        http.authenticationManager(userAuthenticationManager);
         return http.build();
     }
 

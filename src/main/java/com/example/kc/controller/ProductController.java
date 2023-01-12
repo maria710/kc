@@ -5,7 +5,7 @@ import com.example.kc.entity.Product;
 import com.example.kc.mapper.ProductMapper;
 import com.example.kc.service.CategoryService;
 import com.example.kc.service.ProductService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

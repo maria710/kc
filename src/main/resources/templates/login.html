@@ -37,16 +37,16 @@
     </div>
   </div>
 
-  <form method="post" role="form" th:action="@{/login}">
+  <form  role="form"  th:action="@{/login}" method="post">
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Username" th:required="required">
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password" th:required="required">
     </div>
-    <button type="submit" value="Log in" class="btn btn-primary login-button">Log In</button>
+    <button type="submit" value="Login" class="btn btn-primary login-button">Log In</button>
 
     <span class="psw">Don't have an account? <a th:href="@{/register}"
                                                 class="register-now fw-bold">Register now</a></span>

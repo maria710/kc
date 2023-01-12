@@ -1,10 +1,7 @@
 package com.example.kc.service;
 
 import com.example.kc.repository.UserRepository;
-import com.example.kc.security.RegistredUserDetails;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -20,7 +17,7 @@ import java.util.stream.Collectors;
 @Data
 public class RegisteredUserDetailService implements UserDetailsService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

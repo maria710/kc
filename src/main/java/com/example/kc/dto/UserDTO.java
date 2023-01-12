@@ -1,7 +1,7 @@
 package com.example.kc.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
