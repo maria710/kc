@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="utf-8">
@@ -32,7 +33,10 @@
         Central London & City Delivery
     </p>
 </div>
-
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <p>Welcome Admin</p>
+    <p>You have access to the Admin area</p>
+</div>
 <div class="index-main">
     <div class="index-info container con-description text-center">
         <div class="row">

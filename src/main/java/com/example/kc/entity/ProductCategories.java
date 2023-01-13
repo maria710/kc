@@ -15,7 +15,6 @@ public class ProductCategories {
     @Column(name = "product_id")
     private Long productId;
 
-    @Id
     @Column(name = "subcategory_id")
     private Long subcategoryId;
 }
