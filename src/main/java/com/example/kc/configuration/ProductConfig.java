@@ -1,6 +1,7 @@
 package com.example.kc.configuration;
 
 import com.example.kc.mapper.CategoryMapper;
+import com.example.kc.mapper.ContactMessageMapper;
 import com.example.kc.mapper.ProductMapper;
 import com.example.kc.mapper.UserMapper;
 import org.springframework.context.annotation.Bean;
@@ -17,5 +18,8 @@ public class ProductConfig {
     public UserMapper userMapper() {return new UserMapper();}
     @Bean
     public CategoryMapper categoryMapper() {return new CategoryMapper();}
+
+    @Bean
+    public ContactMessageMapper contactMessageMapper() {return new ContactMessageMapper();}
 
 }
