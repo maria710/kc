@@ -30,6 +30,15 @@ public class ProductController {
         return "productList";
     }
 
+    @GetMapping(value = "/product")
+    public String getProduct(@ModelAttribute("id") Long id, Model model) {
+        var productDTO = productMapper.toProductDTO(productService.findById(id));
+        productDTO.setId(id);
+        model.addAttribute("product", productDTO);
+        model.addAttribute("id", id);
+        return "product";
+    }
+
     @GetMapping(value = "/products/{category}")
     public String getProductByCategory(Model model, @PathVariable("category") String category) {
 

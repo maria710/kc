@@ -27,7 +27,7 @@ class CartRepositoryTest {
         var user = new User2();
         user.setId(4L);
 
-        List<CartItem> cartItemList = cartRepository.findCartItemsByUser2Id(user.getId());
+        List<CartItem> cartItemList = cartRepository.findAll();
         assertEquals(0, cartItemList.size());
     }
 }

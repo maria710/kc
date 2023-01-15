@@ -1,25 +1,28 @@
-<div th:fragment="navbar">
+<div th:fragment="navbar"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <header>
         <nav class="container-fluid upper-nav">
             <div>
                 <a th:href="@{/addMessage}">Contact Us</a>
             </div>
-            <div>
-                <i class="fa-solid fa-user"></i>
-                <a th:href="@{/login}" class="btn btn-link">Log In</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-user"></i>
-                <a th:href="@{/register}" class="btn btn-link">Register</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-user"></i>
-                <a th:href="@{/logout}" class="btn btn-link">Log out</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-user"></i>
-                <a th:href="@{/messages}" class="btn btn-link">Messages</a>
-            </div>
+           <div class="d-flex justify-content-center">
+               <div sec:authorize="isAnonymous()">
+                   <i class="fa-solid fa-user"></i>
+                   <a th:href="@{/login}" class="btn my-button">Log In</a>
+               </div>
+               <div sec:authorize="isAnonymous()">
+                   <i class="fa-solid fa-user"></i>
+                   <a th:href="@{/register}" class="btn my-button">Register</a>
+               </div>
+               <div sec:authorize="isAuthenticated()">
+                   <i class="fa-solid fa-user"></i>
+                   <a th:href="@{/logout}" class="btn my-button">Log out</a>
+               </div>
+               <div sec:authorize="isAuthenticated()">
+                   <i class="fa-solid fa-message"></i>
+                   <a th:href="@{/messages}" class="btn my-button">Messages</a>
+               </div>
+           </div>
         </nav>
 
         <nav class="navbar navbar-expand-lg navbar-light main-nav">
@@ -67,12 +70,13 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
+                        <li sec:authorize="isAuthenticated()" class="nav-item">
                             <a class="nav-link" href="/addProduct">Add product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="bi bi-cart" href="/cart/">
-                                Add to cart
+                            <a class="nav-link" th:href="@{/cart}">
+                                CART
+                                <i class="fa-solid fa-cart-shopping"></i>
                             </a>
                         </li>
                     </ul>

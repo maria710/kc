@@ -32,7 +32,9 @@
         <span th:text="${product.getPrice()}"></span>
       </h4>
       <button>
-        Add to cart
+        <a th:href="|@{/addToCart(id = ${product.getId()})}|">
+          Add to cart
+        </a>
       </button>
     </div>
   </div>

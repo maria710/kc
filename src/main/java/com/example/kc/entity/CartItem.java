@@ -9,14 +9,10 @@ import lombok.Data;
 public class CartItem {
 
     @Id
-    @SequenceGenerator(name = "seq_cartItem", sequenceName = "seq_cartItem", schema = "kcflowers", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cartItem")
+    @SequenceGenerator(name = "seq_cartitem", sequenceName = "seq_cartitem", schema = "public", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cartitem")
     @Column(name = "id")
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User2 user2;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -24,4 +20,7 @@ public class CartItem {
 
     @Column(name = "quantity")
     private Integer quantity;
+
+    @Column(name = "active")
+    private Boolean active;
 }

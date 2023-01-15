@@ -18,7 +18,7 @@ class CartServiceTest {
 
     @Test
     public void getCartItemListByUserIdTest() {
-        List<CartItem> list = cartService.cartItemListByUserId(null);
+        List<CartItem> list = cartService.cartItems();
 
         assertThat(list).isNotNull();
         assertThat(list).isEmpty();

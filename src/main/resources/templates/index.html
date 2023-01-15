@@ -33,7 +33,7 @@
         Central London & City Delivery
     </p>
 </div>
-<div sec:authorize="hasRole('ROLE_ADMIN')">
+<div sec:authorize="isAuthenticated()">
     <p>Welcome Admin</p>
     <p>You have access to the Admin area</p>
 </div>

@@ -1,9 +1,6 @@
 package com.example.kc.configuration;
 
-import com.example.kc.mapper.CategoryMapper;
-import com.example.kc.mapper.ContactMessageMapper;
-import com.example.kc.mapper.ProductMapper;
-import com.example.kc.mapper.UserMapper;
+import com.example.kc.mapper.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,5 +18,7 @@ public class ProductConfig {
 
     @Bean
     public ContactMessageMapper contactMessageMapper() {return new ContactMessageMapper();}
+@Bean
+    public CartItemMapper cartItemMapper() {return new CartItemMapper();}
 
 }
