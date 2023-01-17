@@ -45,6 +45,7 @@ public class WebSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/gallery/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/img/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/showCart/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/products/**")).permitAll()
 
                                 .anyRequest().authenticated()
                 )
