@@ -37,20 +37,20 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav main-ul">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkFlowers"
-                               role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Flowers
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkFlowers">
-                                <li><a class="dropdown-item" th:href="@{/products}">All</a></li>
-                                <li><a class="dropdown-item" th:href="@{/products/christmas}">Christmas</a></li>
-                                <li><a class="dropdown-item" th:href="@{/products/birthday}">Birthday</a></li>
-                            </ul>
-                        </li>
+<!--                        <li class="nav-item dropdown">-->
+<!--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkFlowers"-->
+<!--                               role="button"-->
+<!--                               data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                                Flowers-->
+<!--                            </a>-->
+<!--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkFlowers">-->
+<!--                                <li><a class="dropdown-item" th:href="@{/products}">All</a></li>-->
+<!--                                <li><a class="dropdown-item" th:href="@{/products/christmas}">Christmas</a></li>-->
+<!--                                <li><a class="dropdown-item" th:href="@{/products/birthday}">Birthday</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/products/sale}">Sale</a>
+                            <a class="nav-link" th:href="@{/products}">Flowers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" th:href="@{/gallery}">Gallery</a>
@@ -58,17 +58,17 @@
                         <li class="nav-item">
                             <a class="nav-link" th:href="@{/aboutUs}">About us</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Events
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Weddings</a></li>
-                                <li><a class="dropdown-item" href="#">Funerals</a></li>
-                                <li><a class="dropdown-item" href="#">Contract and Services</a></li>
-                            </ul>
-                        </li>
+<!--                        <li class="nav-item dropdown">-->
+<!--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"-->
+<!--                               data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                                Events-->
+<!--                            </a>-->
+<!--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                                <li><a class="dropdown-item" href="#">Weddings</a></li>-->
+<!--                                <li><a class="dropdown-item" href="#">Funerals</a></li>-->
+<!--                                <li><a class="dropdown-item" href="#">Contract and Services</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
 
                         <li sec:authorize="isAuthenticated()" class="nav-item">
                             <a class="nav-link" href="/addProduct">Add product</a>

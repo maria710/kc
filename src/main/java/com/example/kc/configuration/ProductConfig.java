@@ -9,16 +9,28 @@ import org.springframework.security.authentication.AuthenticationManager;
 public class ProductConfig {
 
     @Bean
-    public ProductMapper productMapper() {return new ProductMapper();}
+    public ProductMapper productMapper() {
+        return new ProductMapper();
+    }
 
     @Bean
-    public UserMapper userMapper() {return new UserMapper();}
-    @Bean
-    public CategoryMapper categoryMapper() {return new CategoryMapper();}
+    public UserMapper userMapper() {
+        return new UserMapper();
+    }
 
     @Bean
-    public ContactMessageMapper contactMessageMapper() {return new ContactMessageMapper();}
-@Bean
-    public CartItemMapper cartItemMapper() {return new CartItemMapper();}
+    public CategoryMapper categoryMapper() {
+        return new CategoryMapper();
+    }
+
+    @Bean
+    public ContactMessageMapper contactMessageMapper() {
+        return new ContactMessageMapper();
+    }
+
+    @Bean
+    public CartItemMapper cartItemMapper() {
+        return new CartItemMapper();
+    }
 
 }

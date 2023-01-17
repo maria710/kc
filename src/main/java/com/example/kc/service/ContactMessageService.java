@@ -19,6 +19,9 @@ public class ContactMessageService {
     private final ContactMessageRepository contactMessageRepository;
 
     public ContactMessage addMessage(ContactMessageDTO contactMessageDTO) {
+        if (contactMessageDTO.getMessage().isEmpty()) {
+            return null;
+        }
         var message = contactMessageMapper.toContactMessage(contactMessageDTO);
         message.setActive(true);
         contactMessageRepository.save(message);

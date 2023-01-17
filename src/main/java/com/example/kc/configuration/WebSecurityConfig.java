@@ -33,11 +33,19 @@ public class WebSecurityConfig {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers(new AntPathRequestMatcher("/resources/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/css/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/js/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/register/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/admin/**"))
                                 .hasAnyRole("ADMIN", "USER")
                                 .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/post/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/cart/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/aboutUs/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/gallery/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/img/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/showCart/**")).permitAll()
+
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

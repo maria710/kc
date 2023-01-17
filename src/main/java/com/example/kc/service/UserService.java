@@ -25,6 +25,12 @@ public class UserService {
 
 
     public User2 addUser(UserDTO userDTO) {
+
+        if (userDTO == null || userDTO.getEmail() == null || userDTO.getFirstName() == null ||
+                userDTO.getLastName() == null) {
+            return null;
+        }
+
         User2 user2 = userMapper.toUser(userDTO);
         user2.setActive(true);
         String username = userDTO.getEmail().substring(0,userDTO.getEmail().indexOf("@"));

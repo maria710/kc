@@ -103,33 +103,4 @@ public class ProductController {
         productMapper.toProductDTO(productService.deleteProduct(id));
         return "redirect:/products";
     }
-
-
-    //    @GetMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
-//    public ProductDTO getProduct(@PathVariable("id") Long id) {
-//        return productMapper.toProductDTO(productService.getProduct(id));
-//    }
-//    @GetMapping(value = "product")
-//    public String getProduct(@ModelAttribute("id") Long id, Model model) {
-//        var productDTO =  productMapper.toProductDTO(productService.getProduct(id));
-//        model.addAttribute("product", productDTO);
-//        return "product";
-//    }
-
-
-//    @PostMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
-//    public ProductDTO postProduct(@RequestBody ProductDTO productDTO) {
-//        return productMapper.toProductDTO(productService.addProduct(productDTO));
-//    }
-
-
-//    @PutMapping(value = "/product/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
-//    public ProductDTO putProduct(@PathVariable("id") Long id, @RequestBody ProductDTO productDTO) {
-//        return productMapper.toProductDTO(productService.updateProduct(id, productDTO));
-//    }
-//
-//    @DeleteMapping(value = "/product/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
-//    public ProductDTO deleteProduct(@PathVariable("id") Long id) {
-//        return productMapper.toProductDTO(productService.deleteProduct(id));
-//    }
 }

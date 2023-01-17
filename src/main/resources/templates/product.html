@@ -32,10 +32,32 @@
         <span th:text="${product.getPrice()}"></span>
       </h4>
       <button>
-        <a th:href="|@{/addToCart(id = ${product.getId()})}|">
+        <a onclick="addToCart();">
+<!--          th:href="|@{/addToCart(id = ${product.getId()})}|"-->
           Add to cart
         </a>
       </button>
+
+      <script>
+        const urlString = window.location.href;
+        const paramString = urlString.split('?')[1];
+        const queryString = new URLSearchParams(paramString);
+        const httpRequest = new XMLHttpRequest();
+
+        function addToCart() {
+          for (let pair of queryString.entries()) {
+            const url = "http://localhost:8080/addToCart?id=" + pair[1];
+            httpRequest.open("GET", url, true);
+            httpRequest.send();
+            httpRequest.onreadystatechange = function () {
+              if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                alert("Product added to cart");
+              }
+            }
+          }
+        }
+      </script>
+
     </div>
   </div>
   <p>

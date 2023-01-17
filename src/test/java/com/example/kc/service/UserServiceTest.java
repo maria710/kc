@@ -62,5 +62,12 @@ class UserServiceTest {
 
         assertThat(savedUser2.getActive()).isTrue();
         assertThat(savedUser2.getRoles()).isNotNull();
+
+        user2 = userService.addUser(null);
+        assertThat(user2).isNull();
+
+        userDTO.setEmail(null);
+        user2 = userService.addUser(userDTO);
+        assertThat(user2).isNull();
     }
 }

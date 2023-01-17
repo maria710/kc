@@ -6,11 +6,11 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name = "contactMessage")
+@Table(name = "contact_message")
 public class ContactMessage {
 
     @Id
-    @SequenceGenerator(name = "seq_message", sequenceName = "seq_message", schema = "kcflowers", allocationSize = 1)
+    @SequenceGenerator(name = "seq_message", sequenceName = "seq_message", schema = "public", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_message")
     @Column(name = "id")
     private Long id;

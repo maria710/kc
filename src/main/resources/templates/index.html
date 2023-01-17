@@ -33,10 +33,6 @@
         Central London & City Delivery
     </p>
 </div>
-<div sec:authorize="isAuthenticated()">
-    <p>Welcome Admin</p>
-    <p>You have access to the Admin area</p>
-</div>
 <div class="index-main">
     <div class="index-info container con-description text-center">
         <div class="row">
@@ -77,7 +73,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item carousel-img active">
-                    <a th:href="@{html/product.html}">
+                    <a th:href="@{/products}">
                         <img th:src="@{img/banner_autumn.jpeg}" class="d-block w-100" alt="...">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
@@ -85,7 +81,7 @@
                     </div>
                 </div>
                 <div class="carousel-item carousel-img">
-                    <a th:href="@{html/product.html}">
+                    <a th:href="@{/products}">
                         <img th:src="@{/img/banner-wedding.jpg}" class="d-block w-100" alt="...">
                     </a>
                     <div class="carousel-caption d-none d-md-block">

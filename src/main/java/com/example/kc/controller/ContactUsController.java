@@ -43,7 +43,10 @@ public class ContactUsController {
         if (bindingResult.hasFieldErrors()) {
             return "productForm";
         }
-        contactMessageMapper.toContactMessageDTO(contactMessageService.addMessage(contactMessageDTO));
+        var contactMessage = contactMessageService.addMessage(contactMessageDTO);
+        if (contactMessage == null) {
+            return "productForm";
+        }
         model.addAttribute("message", contactMessageDTO.getMessage());
         model.addAttribute("firstName", contactMessageDTO.getFirstName());
         model.addAttribute("lastName", contactMessageDTO.getLastName());

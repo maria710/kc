@@ -56,18 +56,4 @@ public class UserController {
     public String getLogin() {
         return "login";
     }
-
-    @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-//        try {
-//            Authentication auth = new UsernamePasswordAuthenticationToken(username, password);
-//            Authentication authenticated = authenticationManager.authenticate(auth);
-//            SecurityContextHolder.getContext().setAuthentication(authenticated);
-//            return "redirect:/home";
-//        } catch (AuthenticationException e) {
-//            model.addAttribute("error", "Invalid username or password");
-//            return "login";
-//        }
-        return "redirect:/";
-    }
 }
